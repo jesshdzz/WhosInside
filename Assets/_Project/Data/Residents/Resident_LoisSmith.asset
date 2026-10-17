@@ -12,16 +12,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ea7e2aa547e8be48a454834ec373dd8, type: 3}
   m_Name: Resident_LoisSmith
   m_EditorClassIdentifier: Assembly-CSharp::WhoIsOutside.Data.ResidentData
-  residentId: 
-  firstName: 
-  lastName: 
-  age: 0
-  birthDate: 
-  apartment: 
+  residentId: 894569723
+  firstName: Lois
+  lastName: Smith
+  age: 52
+  birthDate: 20/04/1903
+  apartment: F01-01
   credentialExpiry: 
-  normalSprite: {fileID: 0}
-  mainTraits: []
-  secondaryTraits: []
-  behavior: 
+  normalSprite: {fileID: 21300000, guid: 06300a787d114a346b6ea6ef39fbd622, type: 3}
+  mainTraits:
+  - Labios grandes
+  - Lunar en la mejilla izquierda
+  - Cara redonda
+  - Cabello corto
+  secondaryTraits:
+  - Sombrero rosa
+  - Cabello morado oscuro
+  - "Nariz peque\xF1a"
+  - Collar y pendientes de perlas
+  behavior: 'Toca el piano
+
+    Vive con su esposo
+
+    Es bastante paciente'
   controlQuestions: []
-  doubles: []
+  doubles:
+  - severity: 0
+    sprite: {fileID: 21300000, guid: 17a6eb997c7d70b4ab8a3247deb8e68a, type: 3}
+    discrepancies: []
+    alteredAnswers: []
+  - severity: 1
+    sprite: {fileID: 21300000, guid: 69b7f0dce2123f64996220e0ec610922, type: 3}
+    discrepancies: []
+    alteredAnswers: []
+  - severity: 2
+    sprite: {fileID: 21300000, guid: f06fbb4ea43255046a3629b08571f9d4, type: 3}
+    discrepancies: []
+    alteredAnswers: []

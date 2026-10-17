@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ea7e2aa547e8be48a454834ec373dd8, type: 3}
+  m_Name: Resident_FrancisMosses
+  m_EditorClassIdentifier: Assembly-CSharp::WhoIsOutside.Data.ResidentData
+  residentId: 235569418
+  firstName: Francis
+  lastName: Mosses
+  age: 30
+  birthDate: '11/07/1925 '
+  apartment: F02-03
+  credentialExpiry: 
+  normalSprite: {fileID: 21300000, guid: 2d0d0240e6532084091782b70bbf8937, type: 3}
+  mainTraits:
+  - Nariz larga
+  - barbilla fina
+  - Ojos cansados
+  - Cabello corto
+  - Lleva sombrero
+  secondaryTraits:
+  - "Cabello casta\xF1o"
+  - Camisa blanca sin planchar
+  - "Mo\xF1o negro"
+  behavior: 'De pocas palabras
+
+    Siempre se le ve cansado'
+  controlQuestions: []
+  doubles:
+  - severity: 0
+    sprite: {fileID: 21300000, guid: b9aae0637d1506d4dad4747b219b5a29, type: 3}
+    discrepancies: []
+    alteredAnswers: []
+  - severity: 1
+    sprite: {fileID: 21300000, guid: 0cb2aea2c98f28b4982490b85e69edd7, type: 3}
+    discrepancies: []
+    alteredAnswers: []
+  - severity: 2
+    sprite: {fileID: 21300000, guid: 2b4adf3ccc40d2f479b56c611b2e712a, type: 3}
+    discrepancies: []
+    alteredAnswers: []
