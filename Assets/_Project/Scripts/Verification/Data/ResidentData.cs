@@ -23,6 +23,10 @@ namespace WhoIsOutside.Data
 
     [Header("Aspecto")]
     [SerializeField] private Sprite normalSprite;
+
+    [Header("Documentos (imagenes con los datos ya dibujados)")]
+    [SerializeField] private Sprite credentialSprite;
+    [SerializeField] private Sprite requestSprite;
     [SerializeField] private List<string> mainTraits = new List<string>();
     [SerializeField] private List<string> secondaryTraits = new List<string>();
     [SerializeField, TextArea] private string behavior;
@@ -48,6 +52,32 @@ namespace WhoIsOutside.Data
     public string Behavior => behavior;
     public IReadOnlyList<ControlQuestion> ControlQuestions => controlQuestions;
     public IReadOnlyList<ResidentVariant> Doubles => doubles;
+    public Sprite CredentialSprite => credentialSprite;
+    public Sprite RequestSprite => requestSprite;
+
+    // 'variant' null significa "llega el residente real".
+
+    /// <summary>Sprite de la persona que aparece en la ventanilla.</summary>
+    public Sprite GetVisitorSprite(ResidentVariant variant)
+    {
+      return variant != null ? variant.sprite : normalSprite;
+    }
+
+    /// <summary>Credencial a mostrar: la del doble si tiene una propia, si no la real.</summary>
+    public Sprite GetCredentialSprite(ResidentVariant variant)
+    {
+      if (variant != null && variant.credentialSpriteOverride != null)
+        return variant.credentialSpriteOverride;
+      return credentialSprite;
+    }
+
+    /// <summary>Solicitud a mostrar: la del doble si tiene una propia, si no la real.</summary>
+    public Sprite GetRequestSprite(ResidentVariant variant)
+    {
+      if (variant != null && variant.requestSpriteOverride != null)
+        return variant.requestSpriteOverride;
+      return requestSprite;
+    }
 
     // Unity llama a este método en el editor cuando cambia algo en el Inspector.
     // Unity llama a este método en el editor cuando cambias algo en el Inspector.
@@ -55,6 +85,12 @@ namespace WhoIsOutside.Data
     {
       if (normalSprite == null)
         Debug.LogWarning($"[{name}] Falta el sprite normal.", this);
+
+      if (credentialSprite == null)
+        Debug.LogWarning($"[{name}] Falta el sprite de la credencial.", this);
+
+      if (requestSprite == null)
+        Debug.LogWarning($"[{name}] Falta el sprite de la solicitud.", this);
 
       if (doubles == null) return;
 
