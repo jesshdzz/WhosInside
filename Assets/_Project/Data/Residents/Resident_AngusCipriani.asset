@@ -10,16 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ea7e2aa547e8be48a454834ec373dd8, type: 3}
-  m_Name: Resident_AugustoCipriani
+  m_Name: Resident_AngusCipriani
   m_EditorClassIdentifier: Assembly-CSharp::WhoIsOutside.Data.ResidentData
   residentId: 565003698
-  firstName: Augusto
+  firstName: Angus
   lastName: Cipriani
   age: 41
   birthDate: '31/05/1914 '
   apartment: F02-02
   credentialExpiry: 
   normalSprite: {fileID: 21300000, guid: 0452af04fea5d54479b760128c395908, type: 3}
+  credentialSprite: {fileID: 21300000, guid: 95eaad5715e0dc44eb6ef27cc720db13, type: 3}
+  requestSprite: {fileID: 21300000, guid: a86e66ba7b8328441b043e4000a0b417, type: 3}
   mainTraits:
   - Cuello largo
   - Lleva sombrero
@@ -39,13 +41,19 @@ MonoBehaviour:
   doubles:
   - severity: 0
     sprite: {fileID: 21300000, guid: 085047b378621c44dbb0008ffe89d10d, type: 3}
+    credentialSpriteOverride: {fileID: 21300000, guid: b2b95777f49112a4182b701f898c6f62, type: 3}
+    requestSpriteOverride: {fileID: 21300000, guid: a86e66ba7b8328441b043e4000a0b417, type: 3}
     discrepancies: []
     alteredAnswers: []
   - severity: 1
     sprite: {fileID: 21300000, guid: b6c36e05e02394441ba071ae8dbf6205, type: 3}
+    credentialSpriteOverride: {fileID: 21300000, guid: 95eaad5715e0dc44eb6ef27cc720db13, type: 3}
+    requestSpriteOverride: {fileID: 21300000, guid: a86e66ba7b8328441b043e4000a0b417, type: 3}
     discrepancies: []
     alteredAnswers: []
   - severity: 2
     sprite: {fileID: 21300000, guid: 2b2f2203fcba9e34284ea0c7f4455bc9, type: 3}
+    credentialSpriteOverride: {fileID: 21300000, guid: 95eaad5715e0dc44eb6ef27cc720db13, type: 3}
+    requestSpriteOverride: {fileID: 21300000, guid: dc4e0601cc85d1a48b769bb51931ad10, type: 3}
     discrepancies: []
     alteredAnswers: []

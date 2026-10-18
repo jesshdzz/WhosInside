@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ea7e2aa547e8be48a454834ec373dd8, type: 3}
   m_Name: Resident_AlbertoPeachman
   m_EditorClassIdentifier: Assembly-CSharp::WhoIsOutside.Data.ResidentData
-  residentId: 114652289
+  residentId: 146512986354
   firstName: Alberto
   lastName: Peachman
   age: 43
@@ -20,6 +20,8 @@ MonoBehaviour:
   apartment: F03-01
   credentialExpiry: 
   normalSprite: {fileID: 21300000, guid: 7999cb8a50436ce4a89959dafdb2a425, type: 3}
+  credentialSprite: {fileID: 21300000, guid: 6f075337badace6479d37b615adbd721, type: 3}
+  requestSprite: {fileID: 21300000, guid: cf8dea59f608f014fb42e7738111cb04, type: 3}
   mainTraits:
   - Tiene bigote
   - Barbilla prominente
@@ -35,18 +37,24 @@ MonoBehaviour:
   doubles:
   - severity: 0
     sprite: {fileID: 21300000, guid: 36ee6d72012f5a64da42ac49c2be5883, type: 3}
+    credentialSpriteOverride: {fileID: 21300000, guid: 6f075337badace6479d37b615adbd721, type: 3}
+    requestSpriteOverride: {fileID: 21300000, guid: f8cc3c8eda34f6d4991fdfa85217c613, type: 3}
     discrepancies:
     - category: 1
       description: No tiene bigote
     alteredAnswers: []
   - severity: 1
     sprite: {fileID: 21300000, guid: bf337f07183d34f438e25d1b006a5968, type: 3}
+    credentialSpriteOverride: {fileID: 21300000, guid: e8828c133c6b9084f9502022bd1ae4c6, type: 3}
+    requestSpriteOverride: {fileID: 21300000, guid: cf8dea59f608f014fb42e7738111cb04, type: 3}
     discrepancies:
     - category: 1
       description: Se le ve el cerebro
     alteredAnswers: []
   - severity: 2
     sprite: {fileID: 21300000, guid: 2b4adf3ccc40d2f479b56c611b2e712a, type: 3}
+    credentialSpriteOverride: {fileID: 21300000, guid: 6f075337badace6479d37b615adbd721, type: 3}
+    requestSpriteOverride: {fileID: 21300000, guid: cf8dea59f608f014fb42e7738111cb04, type: 3}
     discrepancies:
     - category: 1
       description: Es ciclope

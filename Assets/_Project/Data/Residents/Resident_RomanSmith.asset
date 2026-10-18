@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ea7e2aa547e8be48a454834ec373dd8, type: 3}
   m_Name: Resident_RomanSmith
   m_EditorClassIdentifier: Assembly-CSharp::WhoIsOutside.Data.ResidentData
-  residentId: 483924059
+  residentId: 483924059684
   firstName: Roman
   lastName: Smith
   age: 54
@@ -20,6 +20,8 @@ MonoBehaviour:
   apartment: F01-01
   credentialExpiry: 
   normalSprite: {fileID: 21300000, guid: 25f289e1a63751944ace277f51e22365, type: 3}
+  credentialSprite: {fileID: 0}
+  requestSprite: {fileID: 0}
   mainTraits:
   - 'Gran nariz '
   - Cicatriz en el rostro
@@ -39,13 +41,19 @@ MonoBehaviour:
   doubles:
   - severity: 0
     sprite: {fileID: 21300000, guid: 1a9a59df187750740aaf7bfdb3745bdd, type: 3}
+    credentialSpriteOverride: {fileID: 0}
+    requestSpriteOverride: {fileID: 0}
     discrepancies: []
     alteredAnswers: []
   - severity: 0
     sprite: {fileID: 21300000, guid: f48848c2ab9b4cd4abc53767349d7f5e, type: 3}
+    credentialSpriteOverride: {fileID: 0}
+    requestSpriteOverride: {fileID: 0}
     discrepancies: []
     alteredAnswers: []
   - severity: 0
     sprite: {fileID: 21300000, guid: 09dce32a55b0325449bfdea2d11dd4f6, type: 3}
+    credentialSpriteOverride: {fileID: 0}
+    requestSpriteOverride: {fileID: 0}
     discrepancies: []
     alteredAnswers: []

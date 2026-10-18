@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ea7e2aa547e8be48a454834ec373dd8, type: 3}
   m_Name: Resident_NachaMikaelys
   m_EditorClassIdentifier: Assembly-CSharp::WhoIsOutside.Data.ResidentData
-  residentId: '789653665 '
+  residentId: '789653665413 '
   firstName: Nacha
   lastName: Mikaelys
   age: 23
@@ -20,6 +20,8 @@ MonoBehaviour:
   apartment: F02-03
   credentialExpiry: 
   normalSprite: {fileID: 21300000, guid: b83d8c443984e9743b36422bf0e654a4, type: 3}
+  credentialSprite: {fileID: 0}
+  requestSprite: {fileID: 0}
   mainTraits:
   - Ojo derecho azul
   - Ojo izquierdo verde
@@ -40,13 +42,19 @@ MonoBehaviour:
   doubles:
   - severity: 0
     sprite: {fileID: 21300000, guid: c72b3a83c98acf645a64166e97f77f85, type: 3}
+    credentialSpriteOverride: {fileID: 0}
+    requestSpriteOverride: {fileID: 0}
     discrepancies: []
     alteredAnswers: []
   - severity: 1
     sprite: {fileID: 21300000, guid: 9762e6c5c407a1846979ff5103548c47, type: 3}
+    credentialSpriteOverride: {fileID: 0}
+    requestSpriteOverride: {fileID: 0}
     discrepancies: []
     alteredAnswers: []
   - severity: 2
     sprite: {fileID: 21300000, guid: 820799cb111b5894b8a00bec0184aa18, type: 3}
+    credentialSpriteOverride: {fileID: 0}
+    requestSpriteOverride: {fileID: 0}
     discrepancies: []
     alteredAnswers: []

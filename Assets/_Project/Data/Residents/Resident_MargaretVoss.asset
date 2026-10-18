@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ea7e2aa547e8be48a454834ec373dd8, type: 3}
   m_Name: Resident_MargaretVoss
   m_EditorClassIdentifier: Assembly-CSharp::WhoIsOutside.Data.ResidentData
-  residentId: 789564525
+  residentId: 789564525115
   firstName: Margaret
   lastName: Voss
   age: 29
@@ -20,6 +20,8 @@ MonoBehaviour:
   apartment: F03-02
   credentialExpiry: 
   normalSprite: {fileID: 21300000, guid: f46f7f10192affc4c9ec09a2a7408b06, type: 3}
+  credentialSprite: {fileID: 0}
+  requestSprite: {fileID: 0}
   mainTraits:
   - Cabello largo
   - "Nariz peque\xF1a y redonda"
@@ -34,19 +36,25 @@ MonoBehaviour:
 
     Siempre olvida su ID
 
-    Tiene un
-    tono de voz bajo'
+    Tiene un tono
+    de voz bajo'
   controlQuestions: []
   doubles:
   - severity: 0
     sprite: {fileID: 21300000, guid: 590ca57cc17b2564fae37098bc9352e8, type: 3}
+    credentialSpriteOverride: {fileID: 0}
+    requestSpriteOverride: {fileID: 0}
     discrepancies: []
     alteredAnswers: []
   - severity: 1
     sprite: {fileID: 21300000, guid: 9075e69f0ac56bb4a8c282807828dddd, type: 3}
+    credentialSpriteOverride: {fileID: 0}
+    requestSpriteOverride: {fileID: 0}
     discrepancies: []
     alteredAnswers: []
   - severity: 2
     sprite: {fileID: 21300000, guid: 45e81efe2ade23042bfc1bb1a5409a42, type: 3}
+    credentialSpriteOverride: {fileID: 0}
+    requestSpriteOverride: {fileID: 0}
     discrepancies: []
     alteredAnswers: []
