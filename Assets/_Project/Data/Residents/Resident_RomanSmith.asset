@@ -20,8 +20,8 @@ MonoBehaviour:
   apartment: F01-01
   credentialExpiry: 
   normalSprite: {fileID: 21300000, guid: 25f289e1a63751944ace277f51e22365, type: 3}
-  credentialSprite: {fileID: 0}
-  requestSprite: {fileID: 0}
+  credentialSprite: {fileID: 21300000, guid: f7d09a35b8a9d084889d48c6ff96bde9, type: 3}
+  requestSprite: {fileID: 21300000, guid: 96afbfaa29c3bb14cb662823e9305676, type: 3}
   mainTraits:
   - 'Gran nariz '
   - Cicatriz en el rostro
@@ -41,19 +41,19 @@ MonoBehaviour:
   doubles:
   - severity: 0
     sprite: {fileID: 21300000, guid: 1a9a59df187750740aaf7bfdb3745bdd, type: 3}
-    credentialSpriteOverride: {fileID: 0}
-    requestSpriteOverride: {fileID: 0}
+    credentialSpriteOverride: {fileID: 21300000, guid: 292ea888e44eef440848c65e6383da7f, type: 3}
+    requestSpriteOverride: {fileID: 21300000, guid: 96afbfaa29c3bb14cb662823e9305676, type: 3}
     discrepancies: []
     alteredAnswers: []
   - severity: 0
     sprite: {fileID: 21300000, guid: f48848c2ab9b4cd4abc53767349d7f5e, type: 3}
-    credentialSpriteOverride: {fileID: 0}
-    requestSpriteOverride: {fileID: 0}
+    credentialSpriteOverride: {fileID: 21300000, guid: f7d09a35b8a9d084889d48c6ff96bde9, type: 3}
+    requestSpriteOverride: {fileID: 21300000, guid: 8e8ab875cff8e404b81432e7ac6bdc3c, type: 3}
     discrepancies: []
     alteredAnswers: []
   - severity: 0
     sprite: {fileID: 21300000, guid: 09dce32a55b0325449bfdea2d11dd4f6, type: 3}
-    credentialSpriteOverride: {fileID: 0}
-    requestSpriteOverride: {fileID: 0}
+    credentialSpriteOverride: {fileID: 21300000, guid: f7d09a35b8a9d084889d48c6ff96bde9, type: 3}
+    requestSpriteOverride: {fileID: 21300000, guid: 96afbfaa29c3bb14cb662823e9305676, type: 3}
     discrepancies: []
     alteredAnswers: []
