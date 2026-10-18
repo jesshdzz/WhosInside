@@ -20,6 +20,8 @@ MonoBehaviour:
   apartment: F01-01
   credentialExpiry: 
   normalSprite: {fileID: 21300000, guid: 06300a787d114a346b6ea6ef39fbd622, type: 3}
+  credentialSprite: {fileID: 21300000, guid: 5375dd1361e609e4b92ddd5f467ac4f9, type: 3}
+  requestSprite: {fileID: 21300000, guid: b29df1821e356374d9ac7b23aafdf338, type: 3}
   mainTraits:
   - Labios grandes
   - Lunar en la mejilla izquierda
@@ -39,13 +41,19 @@ MonoBehaviour:
   doubles:
   - severity: 0
     sprite: {fileID: 21300000, guid: 17a6eb997c7d70b4ab8a3247deb8e68a, type: 3}
+    credentialSpriteOverride: {fileID: 21300000, guid: 5375dd1361e609e4b92ddd5f467ac4f9, type: 3}
+    requestSpriteOverride: {fileID: 21300000, guid: 6788d0a91794db54e81b0e9749f1da1e, type: 3}
     discrepancies: []
     alteredAnswers: []
   - severity: 1
     sprite: {fileID: 21300000, guid: 69b7f0dce2123f64996220e0ec610922, type: 3}
+    credentialSpriteOverride: {fileID: 21300000, guid: 5375dd1361e609e4b92ddd5f467ac4f9, type: 3}
+    requestSpriteOverride: {fileID: 21300000, guid: b29df1821e356374d9ac7b23aafdf338, type: 3}
     discrepancies: []
     alteredAnswers: []
   - severity: 2
     sprite: {fileID: 21300000, guid: f06fbb4ea43255046a3629b08571f9d4, type: 3}
+    credentialSpriteOverride: {fileID: 21300000, guid: 2a89a515e9909fd448d28235ed7d6274, type: 3}
+    requestSpriteOverride: {fileID: 21300000, guid: b29df1821e356374d9ac7b23aafdf338, type: 3}
     discrepancies: []
     alteredAnswers: []

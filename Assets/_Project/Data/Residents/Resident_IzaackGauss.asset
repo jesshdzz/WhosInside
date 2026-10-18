@@ -10,16 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ea7e2aa547e8be48a454834ec373dd8, type: 3}
-  m_Name: Resident_IsaackGauss
+  m_Name: Resident_IzaackGauss
   m_EditorClassIdentifier: Assembly-CSharp::WhoIsOutside.Data.ResidentData
-  residentId: 456985512
-  firstName: Isaak
+  residentId: 456985512369
+  firstName: Izaack
   lastName: Gauss
   age: 37
   birthDate: '01/03/1918 '
   apartment: F03-03
   credentialExpiry: 
   normalSprite: {fileID: 21300000, guid: 9973f8a8de4c18242abfd92dacd18469, type: 3}
+  credentialSprite: {fileID: 0}
+  requestSprite: {fileID: 0}
   mainTraits:
   - Cejas grandes
   - Sonrisa amplia
@@ -36,13 +38,19 @@ MonoBehaviour:
   doubles:
   - severity: 0
     sprite: {fileID: 21300000, guid: cc50ff491e830824cb5b8bda4a9bd70d, type: 3}
+    credentialSpriteOverride: {fileID: 0}
+    requestSpriteOverride: {fileID: 0}
     discrepancies: []
     alteredAnswers: []
   - severity: 1
     sprite: {fileID: 21300000, guid: d5dfdadd079d23a4aa923b59c62d005f, type: 3}
+    credentialSpriteOverride: {fileID: 0}
+    requestSpriteOverride: {fileID: 0}
     discrepancies: []
     alteredAnswers: []
   - severity: 2
     sprite: {fileID: 21300000, guid: fba4133817bfc5043ab877540403248c, type: 3}
+    credentialSpriteOverride: {fileID: 0}
+    requestSpriteOverride: {fileID: 0}
     discrepancies: []
     alteredAnswers: []

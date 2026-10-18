@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ea7e2aa547e8be48a454834ec373dd8, type: 3}
   m_Name: Resident_SteveRudboys
   m_EditorClassIdentifier: Assembly-CSharp::WhoIsOutside.Data.ResidentData
-  residentId: 565845455
+  residentId: 565845455965
   firstName: Steve
   lastName: Rudboys
   age: 38
@@ -20,6 +20,8 @@ MonoBehaviour:
   apartment: F01-02
   credentialExpiry: 
   normalSprite: {fileID: 21300000, guid: 54296011a2f86c641a8defeb6f5a19dd, type: 3}
+  credentialSprite: {fileID: 0}
+  requestSprite: {fileID: 0}
   mainTraits:
   - Usa gafas
   - Nariz grande
@@ -36,13 +38,19 @@ MonoBehaviour:
   doubles:
   - severity: 0
     sprite: {fileID: 21300000, guid: 78723fa96082e784bb11ad59ea5e8e0d, type: 3}
+    credentialSpriteOverride: {fileID: 0}
+    requestSpriteOverride: {fileID: 0}
     discrepancies: []
     alteredAnswers: []
   - severity: 1
     sprite: {fileID: 21300000, guid: 29d57c647b9b0fd44861216a8ec5917f, type: 3}
+    credentialSpriteOverride: {fileID: 0}
+    requestSpriteOverride: {fileID: 0}
     discrepancies: []
     alteredAnswers: []
   - severity: 2
     sprite: {fileID: 21300000, guid: 1dd06eb82cd347542bcbe7540922fa47, type: 3}
+    credentialSpriteOverride: {fileID: 0}
+    requestSpriteOverride: {fileID: 0}
     discrepancies: []
     alteredAnswers: []
