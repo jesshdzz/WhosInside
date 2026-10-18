@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ea7e2aa547e8be48a454834ec373dd8, type: 3}
+  m_Name: Resident_RomanSmith
+  m_EditorClassIdentifier: Assembly-CSharp::WhoIsOutside.Data.ResidentData
+  residentId: 483924059
+  firstName: Roman
+  lastName: Smith
+  age: 54
+  birthDate: 15/08/1901
+  apartment: F01-01
+  credentialExpiry: 
+  normalSprite: {fileID: 21300000, guid: 25f289e1a63751944ace277f51e22365, type: 3}
+  mainTraits:
+  - 'Gran nariz '
+  - Cicatriz en el rostro
+  - Cara larga
+  - Uniceja
+  - Lleva sombrero
+  secondaryTraits:
+  - 'Ojos verdes '
+  - 'Camisa blanca de cuello '
+  - "Corbata borgo\xF1a "
+  behavior: 'Es muy callado
+
+    Un poco siniestro
+
+    Nunca se quita el sombrero'
+  controlQuestions: []
+  doubles:
+  - severity: 0
+    sprite: {fileID: 21300000, guid: 1a9a59df187750740aaf7bfdb3745bdd, type: 3}
+    discrepancies: []
+    alteredAnswers: []
+  - severity: 0
+    sprite: {fileID: 21300000, guid: f48848c2ab9b4cd4abc53767349d7f5e, type: 3}
+    discrepancies: []
+    alteredAnswers: []
+  - severity: 0
+    sprite: {fileID: 21300000, guid: 09dce32a55b0325449bfdea2d11dd4f6, type: 3}
+    discrepancies: []
+    alteredAnswers: []

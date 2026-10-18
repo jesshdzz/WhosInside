@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ea7e2aa547e8be48a454834ec373dd8, type: 3}
+  m_Name: Resident_AugustoCipriani
+  m_EditorClassIdentifier: Assembly-CSharp::WhoIsOutside.Data.ResidentData
+  residentId: 565003698
+  firstName: Augusto
+  lastName: Cipriani
+  age: 41
+  birthDate: '31/05/1914 '
+  apartment: F02-02
+  credentialExpiry: 
+  normalSprite: {fileID: 21300000, guid: 0452af04fea5d54479b760128c395908, type: 3}
+  mainTraits:
+  - Cuello largo
+  - Lleva sombrero
+  - Tiene bigote tipo mostacho
+  - "Ojos peque\xF1os"
+  secondaryTraits:
+  - "Cabello casta\xF1o"
+  - Traje de rayas finas moradas
+  - Cuello de camisa blanca con corbata roja
+  behavior: 'Es muy amable con los vecinos
+
+    Es muy formal al hablar
+
+    Tiene
+    gustos finos'
+  controlQuestions: []
+  doubles:
+  - severity: 0
+    sprite: {fileID: 21300000, guid: 085047b378621c44dbb0008ffe89d10d, type: 3}
+    discrepancies: []
+    alteredAnswers: []
+  - severity: 1
+    sprite: {fileID: 21300000, guid: b6c36e05e02394441ba071ae8dbf6205, type: 3}
+    discrepancies: []
+    alteredAnswers: []
+  - severity: 2
+    sprite: {fileID: 21300000, guid: 2b2f2203fcba9e34284ea0c7f4455bc9, type: 3}
+    discrepancies: []
+    alteredAnswers: []
