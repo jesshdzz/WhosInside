@@ -20,8 +20,8 @@ MonoBehaviour:
   apartment: F02-03
   credentialExpiry: 
   normalSprite: {fileID: 21300000, guid: b83d8c443984e9743b36422bf0e654a4, type: 3}
-  credentialSprite: {fileID: 0}
-  requestSprite: {fileID: 0}
+  credentialSprite: {fileID: 21300000, guid: a966d78ef55c6eb4b8877b2fe20ceb5c, type: 3}
+  requestSprite: {fileID: 21300000, guid: d8d459e7f3a5ac34fa06f07722875e69, type: 3}
   mainTraits:
   - Ojo derecho azul
   - Ojo izquierdo verde
@@ -42,19 +42,19 @@ MonoBehaviour:
   doubles:
   - severity: 0
     sprite: {fileID: 21300000, guid: c72b3a83c98acf645a64166e97f77f85, type: 3}
-    credentialSpriteOverride: {fileID: 0}
-    requestSpriteOverride: {fileID: 0}
+    credentialSpriteOverride: {fileID: 21300000, guid: 05ac5e165d728f54a8955e2c7b13db2c, type: 3}
+    requestSpriteOverride: {fileID: 21300000, guid: d8d459e7f3a5ac34fa06f07722875e69, type: 3}
     discrepancies: []
     alteredAnswers: []
   - severity: 1
     sprite: {fileID: 21300000, guid: 9762e6c5c407a1846979ff5103548c47, type: 3}
-    credentialSpriteOverride: {fileID: 0}
-    requestSpriteOverride: {fileID: 0}
+    credentialSpriteOverride: {fileID: 21300000, guid: a966d78ef55c6eb4b8877b2fe20ceb5c, type: 3}
+    requestSpriteOverride: {fileID: 21300000, guid: 304682cf886e2e14ca0dfd83d44199fd, type: 3}
     discrepancies: []
     alteredAnswers: []
   - severity: 2
     sprite: {fileID: 21300000, guid: 820799cb111b5894b8a00bec0184aa18, type: 3}
-    credentialSpriteOverride: {fileID: 0}
-    requestSpriteOverride: {fileID: 0}
+    credentialSpriteOverride: {fileID: 21300000, guid: a966d78ef55c6eb4b8877b2fe20ceb5c, type: 3}
+    requestSpriteOverride: {fileID: 21300000, guid: d8d459e7f3a5ac34fa06f07722875e69, type: 3}
     discrepancies: []
     alteredAnswers: []
