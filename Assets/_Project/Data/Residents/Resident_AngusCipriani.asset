@@ -43,7 +43,9 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 085047b378621c44dbb0008ffe89d10d, type: 3}
     credentialSpriteOverride: {fileID: 21300000, guid: b2b95777f49112a4182b701f898c6f62, type: 3}
     requestSpriteOverride: {fileID: 21300000, guid: a86e66ba7b8328441b043e4000a0b417, type: 3}
-    discrepancies: []
+    discrepancies:
+    - category: 1
+      description: Cuello largo
     alteredAnswers: []
   - severity: 1
     sprite: {fileID: 21300000, guid: b6c36e05e02394441ba071ae8dbf6205, type: 3}

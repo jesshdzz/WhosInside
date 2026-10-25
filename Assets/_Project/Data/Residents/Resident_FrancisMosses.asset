@@ -41,7 +41,9 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: b9aae0637d1506d4dad4747b219b5a29, type: 3}
     credentialSpriteOverride: {fileID: 21300000, guid: 9260804daba9de9469b860418cc8736e, type: 3}
     requestSpriteOverride: {fileID: 21300000, guid: f7ba0e1e53f8e814989a031ef050572a, type: 3}
-    discrepancies: []
+    discrepancies:
+    - category: 1
+      description: No se
     alteredAnswers: []
   - severity: 1
     sprite: {fileID: 21300000, guid: 0cb2aea2c98f28b4982490b85e69edd7, type: 3}
