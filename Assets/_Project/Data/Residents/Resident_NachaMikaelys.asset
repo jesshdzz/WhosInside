@@ -38,23 +38,53 @@ MonoBehaviour:
 
     Habla mucho de su gato
     negro'
-  controlQuestions: []
+  controlQuestions:
+  - question: ID
+    correctAnswer: Todo esta bien con mi ID.
+  - question: Apariencia
+    correctAnswer: Me veo mas bonita de lo habitual.
+  - question: Solicitud de entrada
+    correctAnswer: Yo veo todo normal y al pie de la letra
+  - question: Lista del dia
+    correctAnswer: Claro que estoy en la lista.
   doubles:
   - severity: 0
     sprite: {fileID: 21300000, guid: c72b3a83c98acf645a64166e97f77f85, type: 3}
     credentialSpriteOverride: {fileID: 21300000, guid: 05ac5e165d728f54a8955e2c7b13db2c, type: 3}
     requestSpriteOverride: {fileID: 21300000, guid: d8d459e7f3a5ac34fa06f07722875e69, type: 3}
     discrepancies: []
-    alteredAnswers: []
+    alteredAnswers:
+    - questionIndex: 2
+      wrongAnswer: Es otro apellido con el que me identifico
+    - questionIndex: 1
+      wrongAnswer: No se a lo que te refieres, todo esta bien conmigo.
   - severity: 1
     sprite: {fileID: 21300000, guid: 9762e6c5c407a1846979ff5103548c47, type: 3}
     credentialSpriteOverride: {fileID: 21300000, guid: a966d78ef55c6eb4b8877b2fe20ceb5c, type: 3}
     requestSpriteOverride: {fileID: 21300000, guid: 304682cf886e2e14ca0dfd83d44199fd, type: 3}
     discrepancies: []
-    alteredAnswers: []
+    alteredAnswers:
+    - questionIndex: 2
+      wrongAnswer: Yo no veo nada nada de raro.
+    - questionIndex: 1
+      wrongAnswer: Son mis pupiletes de chavaaaa.
   - severity: 2
     sprite: {fileID: 21300000, guid: 820799cb111b5894b8a00bec0184aa18, type: 3}
     credentialSpriteOverride: {fileID: 21300000, guid: a966d78ef55c6eb4b8877b2fe20ceb5c, type: 3}
     requestSpriteOverride: {fileID: 21300000, guid: d8d459e7f3a5ac34fa06f07722875e69, type: 3}
     discrepancies: []
-    alteredAnswers: []
+    alteredAnswers:
+    - questionIndex: 1
+      wrongAnswer: "L\u0335I\u0336B\u0336E\u0336R\u0336A\u0336 \u0336M\u0336E\u0336
+        \u0336D\u0336O\u0336M\u0336I\u0336N\u0336U\u0336S\u0336  N\u0335O\u0337S\u0337
+        \u0335V\u0337E\u0337N\u0336I\u0335M\u0335U\u0335S\u0337"
+  - severity: 2
+    sprite: {fileID: 21300000, guid: b83d8c443984e9743b36422bf0e654a4, type: 3}
+    credentialSpriteOverride: {fileID: 21300000, guid: a966d78ef55c6eb4b8877b2fe20ceb5c, type: 3}
+    requestSpriteOverride: {fileID: 21300000, guid: d8d459e7f3a5ac34fa06f07722875e69, type: 3}
+    discrepancies: []
+    alteredAnswers:
+    - questionIndex: 1
+      wrongAnswer: "L\u0335I\u0336B\u0336E\u0336R\u0336A\u0336 \u0336M\u0336E\u0336
+        \u0336D\u0336O\u0336M\u0336I\u0336N\u0336U\u0336S\u0336  N\u0335O\u0337S\u0337
+        \u0335V\u0337E\u0337N\u0336I\u0335M\u0335U\u0335S\u0337"

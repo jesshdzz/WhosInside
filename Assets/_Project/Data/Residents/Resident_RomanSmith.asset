@@ -37,23 +37,47 @@ MonoBehaviour:
     Un poco siniestro
 
     Nunca se quita el sombrero'
-  controlQuestions: []
+  controlQuestions:
+  - question: ID
+    correctAnswer: Todo esta bein con mi ID.
+  - question: Apariencia
+    correctAnswer: Todo esta bien con mi apariencia.
+  - question: Solicitud de entrada
+    correctAnswer: Todo esta bein con mi solicitud.
+  - question: Lista del dia
+    correctAnswer: Si estoy en la lista del dia.
   doubles:
   - severity: 0
     sprite: {fileID: 21300000, guid: 1a9a59df187750740aaf7bfdb3745bdd, type: 3}
     credentialSpriteOverride: {fileID: 21300000, guid: 292ea888e44eef440848c65e6383da7f, type: 3}
     requestSpriteOverride: {fileID: 21300000, guid: 96afbfaa29c3bb14cb662823e9305676, type: 3}
     discrepancies: []
-    alteredAnswers: []
+    alteredAnswers:
+    - questionIndex: 0
+      wrongAnswer: "Solo se me olvido pegarla, ma\xF1ana lo hago."
   - severity: 0
     sprite: {fileID: 21300000, guid: f48848c2ab9b4cd4abc53767349d7f5e, type: 3}
     credentialSpriteOverride: {fileID: 21300000, guid: f7d09a35b8a9d084889d48c6ff96bde9, type: 3}
     requestSpriteOverride: {fileID: 21300000, guid: 8e8ab875cff8e404b81432e7ac6bdc3c, type: 3}
     discrepancies: []
-    alteredAnswers: []
+    alteredAnswers:
+    - questionIndex: 2
+      wrongAnswer: No soy un doble, solo dejame pasar.
+    - questionIndex: 1
+      wrongAnswer: "Es que soy al\xE9rgico a los humanos."
   - severity: 0
     sprite: {fileID: 21300000, guid: 09dce32a55b0325449bfdea2d11dd4f6, type: 3}
     credentialSpriteOverride: {fileID: 21300000, guid: f7d09a35b8a9d084889d48c6ff96bde9, type: 3}
     requestSpriteOverride: {fileID: 21300000, guid: 96afbfaa29c3bb14cb662823e9305676, type: 3}
     discrepancies: []
-    alteredAnswers: []
+    alteredAnswers:
+    - questionIndex: 1
+      wrongAnswer: INctyvjHHOJH6675534we58HHIKNJ....Mb7tdBJ
+  - severity: 0
+    sprite: {fileID: 21300000, guid: 25f289e1a63751944ace277f51e22365, type: 3}
+    credentialSpriteOverride: {fileID: 21300000, guid: f7d09a35b8a9d084889d48c6ff96bde9, type: 3}
+    requestSpriteOverride: {fileID: 21300000, guid: 8e8ab875cff8e404b81432e7ac6bdc3c, type: 3}
+    discrepancies: []
+    alteredAnswers:
+    - questionIndex: 2
+      wrongAnswer: Pues yo lo veo todo en orden.
