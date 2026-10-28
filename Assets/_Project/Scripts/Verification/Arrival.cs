@@ -28,24 +28,24 @@ namespace WhoIsOutside.Verification
     public Sprite CredentialSprite => Resident.GetCredentialSprite(Variant);
     public Sprite RequestSprite => Resident.GetRequestSprite(Variant);
 
-    public int DiscrepancyCount =>
-        (IsImpostor && Variant.discrepancies != null) ? Variant.discrepancies.Count : 0;
+    //public int DiscrepancyCount =>
+        // (IsImpostor && Variant.discrepancies != null) ? Variant.discrepancies.Count : 0;
 
     /// <summary>Texto para la Console: quien llega y, si es doble, que discrepancias tiene.</summary>
     public string Describe()
     {
-      if (!IsImpostor)
+      if (!IsImpostor) 
         return $"{Resident.FullName} (REAL)";
 
       var builder = new StringBuilder();
       builder.Append(
-          $"{Resident.FullName} (DOBLE {Variant.severity}, {DiscrepancyCount} discrepancia(s))");
+          $"{Resident.FullName} (DOBLE {Variant.severity}");
 
-      if (Variant.discrepancies != null)
-      {
-        foreach (Discrepancy discrepancy in Variant.discrepancies)
-          builder.Append($"\n    - [{discrepancy.category}] {discrepancy.description}");
-      }
+      // if (Variant.discrepancies != null)
+      // {
+      //   foreach (Discrepancy discrepancy in Variant.discrepancies)
+      //     builder.Append($"\n    - [{discrepancy.category}] {discrepancy.description}");
+      // }
 
       return builder.ToString();
     }

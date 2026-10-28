@@ -63,7 +63,7 @@ namespace WhoIsOutside.Data
     [Tooltip("Opcional: solo si el doble presenta una solicitud distinta a la real.")]
     public Sprite requestSpriteOverride;
 
-    public List<Discrepancy> discrepancies = new List<Discrepancy>();
+    //public List<Discrepancy> discrepancies = new List<Discrepancy>();
     public List<AlteredAnswer> alteredAnswers = new List<AlteredAnswer>();
 
     /// <summary>
