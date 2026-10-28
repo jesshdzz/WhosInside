@@ -1,0 +1,18 @@
+{
+  "mcp": {
+    "ai-game-developer": {
+      "enabled": true,
+      "headers": {
+        "Authorization": "Bearer agd_pk_oeNDaV_isHgDklOVrvLeEgJjgm3gtW8_110Am0Mehpo"
+      },
+      "type": "remote",
+      "url": "https://ai-game.dev/mcp/p/5449b5cc"
+    },
+    "servers": {
+      "context7": {
+        "type": "remote",
+        "url": "https://mcp.context7.com/mcp"
+      }
+    }
+  }
+}

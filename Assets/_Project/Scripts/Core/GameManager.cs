@@ -21,7 +21,13 @@ namespace WhoIsOutside.Core
 
     public void StartNight() => TryChangeState(GameState.ResidentArriving);
     public void ResidentReady() => TryChangeState(GameState.Deciding);
+
+    /// <summary>El jugador pulso Rechazar: ventanilla cerrada, falta el reporte.</summary>
+    public void RejectResident() => TryChangeState(GameState.Rejected);
+
+    /// <summary>El turno queda resuelto (Dejar pasar, o Emergencia tras Rechazar).</summary>
     public void SubmitDecision() => TryChangeState(GameState.ShowingResult);
+
     public void NextResident() => TryChangeState(GameState.ResidentArriving);
     public void EndNight() => TryChangeState(GameState.NightOver);
     public void RestartNight() => TryChangeState(GameState.NotStarted);
@@ -55,6 +61,8 @@ namespace WhoIsOutside.Core
         case GameState.ResidentArriving:
           return to == GameState.Deciding;
         case GameState.Deciding:
+          return to == GameState.ShowingResult || to == GameState.Rejected;
+        case GameState.Rejected:
           return to == GameState.ShowingResult;
         case GameState.ShowingResult:
           return to == GameState.ResidentArriving || to == GameState.NightOver;
@@ -73,16 +81,19 @@ namespace WhoIsOutside.Core
     [ContextMenu("Debug/2 ResidentReady")]
     private void DebugResidentReady() => ResidentReady();
 
-    [ContextMenu("Debug/3 SubmitDecision")]
+    [ContextMenu("Debug/3 RejectResident")]
+    private void DebugRejectResident() => RejectResident();
+
+    [ContextMenu("Debug/4 SubmitDecision")]
     private void DebugSubmitDecision() => SubmitDecision();
 
-    [ContextMenu("Debug/4 NextResident")]
+    [ContextMenu("Debug/5 NextResident")]
     private void DebugNextResident() => NextResident();
 
-    [ContextMenu("Debug/5 EndNight")]
+    [ContextMenu("Debug/6 EndNight")]
     private void DebugEndNight() => EndNight();
 
-    [ContextMenu("Debug/6 RestartNight")]
+    [ContextMenu("Debug/7 RestartNight")]
     private void DebugRestartNight() => RestartNight();
   }
 }
