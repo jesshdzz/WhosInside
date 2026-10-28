@@ -33,7 +33,15 @@ MonoBehaviour:
   - "Ojos peque\xF1os"
   - Camisa blanca con azul
   behavior: "Es algo enoj\xF3n\r\nEs muy impaciente\r\nEs el que manda en su cuarto"
-  controlQuestions: []
+  controlQuestions:
+  - question: ID
+    correctAnswer: "Mi ID? Esta justo aqu\xED, no lo ves?"
+  - question: Apariencia
+    correctAnswer: Todo esta bien conmigo, hasta donde yo recuerdo
+  - question: Solicitud de Ingreso
+    correctAnswer: "Est\xE1 justo aqui! Lo llene completito"
+  - question: "Lista del D\xEDa"
+    correctAnswer: Oh claro que estoy en la lista, revisaste bien?
   doubles:
   - severity: 0
     sprite: {fileID: 21300000, guid: 36ee6d72012f5a64da42ac49c2be5883, type: 3}
@@ -42,7 +50,14 @@ MonoBehaviour:
     discrepancies:
     - category: 1
       description: No tiene bigote
-    alteredAnswers: []
+    alteredAnswers:
+    - questionIndex: 2
+      wrongAnswer: "\xBFEs necesaria una solicitud de entrada? Somos vecinos, ya
+        me conoces. No necesito una solicitud de entrada para llegar a mi casa."
+    - questionIndex: 2
+      wrongAnswer: "\xBFSolicitud de Entrada? \xBFQu\xE9 es eso? "
+    - questionIndex: 1
+      wrongAnswer: No hay nada de malo con mi bigote.
   - severity: 1
     sprite: {fileID: 21300000, guid: bf337f07183d34f438e25d1b006a5968, type: 3}
     credentialSpriteOverride: {fileID: 21300000, guid: e8828c133c6b9084f9502022bd1ae4c6, type: 3}
@@ -50,7 +65,13 @@ MonoBehaviour:
     discrepancies:
     - category: 1
       description: Se le ve el cerebro
-    alteredAnswers: []
+    alteredAnswers:
+    - questionIndex: 0
+      wrongAnswer: "Es nuevo; lo perd\xED y tuve que conseguir otro."
+    - questionIndex: 0
+      wrongAnswer: "\xBFID? \xBFQu\xE9 es eso? No he estudiado eso"
+    - questionIndex: 1
+      wrongAnswer: "\xBFMi cabello? es un nuevo corte, esta a la moda"
   - severity: 2
     sprite: {fileID: 21300000, guid: 2b4adf3ccc40d2f479b56c611b2e712a, type: 3}
     credentialSpriteOverride: {fileID: 21300000, guid: 6f075337badace6479d37b615adbd721, type: 3}
@@ -58,4 +79,16 @@ MonoBehaviour:
     discrepancies:
     - category: 1
       description: Es ciclope
-    alteredAnswers: []
+    alteredAnswers:
+    - questionIndex: 1
+      wrongAnswer: Solo dejame entrar hermano... No te arrepentiras
+  - severity: 2
+    sprite: {fileID: 21300000, guid: 7999cb8a50436ce4a89959dafdb2a425, type: 3}
+    credentialSpriteOverride: {fileID: 21300000, guid: e8828c133c6b9084f9502022bd1ae4c6, type: 3}
+    requestSpriteOverride: {fileID: 21300000, guid: cf8dea59f608f014fb42e7738111cb04, type: 3}
+    discrepancies:
+    - category: 1
+      description: Es ciclope
+    alteredAnswers:
+    - questionIndex: 0
+      wrongAnswer: "\xBFQue? Es mi nombre alternativo, no hay nada de malo en eso."

@@ -34,23 +34,64 @@ MonoBehaviour:
   behavior: 'Es amable
 
     De pocas palabras'
-  controlQuestions: []
+  controlQuestions:
+  - question: ID
+    correctAnswer: No hay nada de malo con mi ID
+  - question: Apariencia
+    correctAnswer: No hay nada de malo con mi apariencia.
+  - question: Solicitud de Entrada
+    correctAnswer: Pero si tdod esta bien con mi solicitud, de que hablas.
+  - question: Lista del dia
+    correctAnswer: "SI estoy en la lista del d\xEDa."
   doubles:
   - severity: 0
     sprite: {fileID: 21300000, guid: 9cd51b1a8a8aae546afa5852abce2f74, type: 3}
     credentialSpriteOverride: {fileID: 21300000, guid: 5797a2a16549e1245a834f52d686a9b2, type: 3}
     requestSpriteOverride: {fileID: 21300000, guid: 027d38ad1c6f40445a964b1686426996, type: 3}
     discrepancies: []
-    alteredAnswers: []
+    alteredAnswers:
+    - questionIndex: 0
+      wrongAnswer: "No hay nada de malo con mi foto, \xBFPiensas que salgo fea?"
+    - questionIndex: 1
+      wrongAnswer: "Solo tengo un poco cansados los ojos, nada m\xE1s"
+    - questionIndex: 2
+      wrongAnswer: "No hay nada de raro con mi trabajo \xBFNo?"
   - severity: 1
     sprite: {fileID: 21300000, guid: f9bbfa4b996b9e54497bb46208dd50f6, type: 3}
     credentialSpriteOverride: {fileID: 21300000, guid: 8491e0693ce6bd8469660f91dc06b364, type: 3}
     requestSpriteOverride: {fileID: 21300000, guid: 027d38ad1c6f40445a964b1686426996, type: 3}
     discrepancies: []
-    alteredAnswers: []
+    alteredAnswers:
+    - questionIndex: 2
+      wrongAnswer: No hay nada de malo con mi solicitud.
+    - questionIndex: 1
+      wrongAnswer: Ay.. es que se me sale de vez en cuando jijiji
   - severity: 2
     sprite: {fileID: 21300000, guid: 878a9681faab74f42a977c1553fc68bf, type: 3}
     credentialSpriteOverride: {fileID: 21300000, guid: 8491e0693ce6bd8469660f91dc06b364, type: 3}
     requestSpriteOverride: {fileID: 21300000, guid: a0f04d5d5c6b8714dae529416d22b9cd, type: 3}
     discrepancies: []
-    alteredAnswers: []
+    alteredAnswers:
+    - questionIndex: 0
+      wrongAnswer: "E\u0334\u030E\u030E\u0310\u0320\u0320\u0331\u0349\u0330\u0331L\u0337\u035D\u0300\u0351\u030B\u034A\u034A\u032A\u0326\u0347L\u0336\u0315\u0310\u0344\u0309\u031A\u030A\u0320\u033AO\u0338\u0313\u0352\u030E\u0311\u0308\u0315\u0355\u031FS\u0338\u0311\u0351\u0360\u030E\u0351\u0331\u0333\u0317\u0331\u0331\u0331
+        \u0335\u0310\u0310\u0309\u030E\u0344\u0306\u0359\u0348\u031D\u0339\u034EV\u0336\u034A\u030F\u0313\u0313\u0343\u032A\u0320\u031D\u0355I\u0335\u0314\u0304\u030B\u0351\u033E\u035B\u0339\u031F\u0326\u031D\u0330\u0331E\u0335\u030A\u0360\u034C\u034B\u0301\u0315\u032C\u031E\u0347\u032A\u0331N\u0334\u0352\u033D\u030E\u0315\u030C\u0306\u0317\u0345\u034DE\u0334\u030C\u034A\u0309\u0309\u0301\u0350\u0356\u0330N\u0338\u0305\u0305\u0344\u034B\u031D\u031E\u0316\u0355\u0349\u032A
+        \u0337\u034B\u0315\u0304\u0358\u035D\u0352\u0331\u0323\u031EP\u0336\u0315\u0343\u030E\u0311\u031A\u035D\u031E\u0321\u0355\u0325\u0332\u0355O\u0334\u0352\u0357\u0306\u0358\u033D\u0360\u0328\u035A\u0324\u0317R\u0335\u035B\u0305\u0351\u0351\u033E\u030D\u0355\u0326\u0348\u0354\u0349
+        \u0335\u030C\u034A\u035D\u030A\u0319T\u0337\u0352\u030B\u0344\u030E\u0306\u0357\u031D\u032D\u0354I\u0336\u030E\u0343\u0344\u0306\u033F\u0342\u0317\u035A\u031D\u0355\u032B\u033C"
+    - questionIndex: 1
+      wrongAnswer: "E\u0334\u030E\u030E\u0310\u0320\u0320\u0331\u0349\u0330\u0331L\u0337\u035D\u0300\u0351\u030B\u034A\u034A\u032A\u0326\u0347L\u0336\u0315\u0310\u0344\u0309\u031A\u030A\u0320\u033AO\u0338\u0313\u0352\u030E\u0311\u0308\u0315\u0355\u031FS\u0338\u0311\u0351\u0360\u030E\u0351\u0331\u0333\u0317\u0331\u0331\u0331
+        \u0335\u0310\u0310\u0309\u030E\u0344\u0306\u0359\u0348\u031D\u0339\u034EV\u0336\u034A\u030F\u0313\u0313\u0343\u032A\u0320\u031D\u0355I\u0335\u0314\u0304\u030B\u0351\u033E\u035B\u0339\u031F\u0326\u031D\u0330\u0331E\u0335\u030A\u0360\u034C\u034B\u0301\u0315\u032C\u031E\u0347\u032A\u0331N\u0334\u0352\u033D\u030E\u0315\u030C\u0306\u0317\u0345\u034DE\u0334\u030C\u034A\u0309\u0309\u0301\u0350\u0356\u0330N\u0338\u0305\u0305\u0344\u034B\u031D\u031E\u0316\u0355\u0349\u032A
+        \u0337\u034B\u0315\u0304\u0358\u035D\u0352\u0331\u0323\u031EP\u0336\u0315\u0343\u030E\u0311\u031A\u035D\u031E\u0321\u0355\u0325\u0332\u0355O\u0334\u0352\u0357\u0306\u0358\u033D\u0360\u0328\u035A\u0324\u0317R\u0335\u035B\u0305\u0351\u0351\u033E\u030D\u0355\u0326\u0348\u0354\u0349
+        \u0335\u030C\u034A\u035D\u030A\u0319T\u0337\u0352\u030B\u0344\u030E\u0306\u0357\u031D\u032D\u0354I\u0336\u030E\u0343\u0344\u0306\u033F\u0342\u0317\u035A\u031D\u0355\u032B\u033C"
+    - questionIndex: 2
+      wrongAnswer: "E\u0334\u030E\u030E\u0310\u0320\u0320\u0331\u0349\u0330\u0331L\u0337\u035D\u0300\u0351\u030B\u034A\u034A\u032A\u0326\u0347L\u0336\u0315\u0310\u0344\u0309\u031A\u030A\u0320\u033AO\u0338\u0313\u0352\u030E\u0311\u0308\u0315\u0355\u031FS\u0338\u0311\u0351\u0360\u030E\u0351\u0331\u0333\u0317\u0331\u0331\u0331
+        \u0335\u0310\u0310\u0309\u030E\u0344\u0306\u0359\u0348\u031D\u0339\u034EV\u0336\u034A\u030F\u0313\u0313\u0343\u032A\u0320\u031D\u0355I\u0335\u0314\u0304\u030B\u0351\u033E\u035B\u0339\u031F\u0326\u031D\u0330\u0331E\u0335\u030A\u0360\u034C\u034B\u0301\u0315\u032C\u031E\u0347\u032A\u0331N\u0334\u0352\u033D\u030E\u0315\u030C\u0306\u0317\u0345\u034DE\u0334\u030C\u034A\u0309\u0309\u0301\u0350\u0356\u0330N\u0338\u0305\u0305\u0344\u034B\u031D\u031E\u0316\u0355\u0349\u032A
+        \u0337\u034B\u0315\u0304\u0358\u035D\u0352\u0331\u0323\u031EP\u0336\u0315\u0343\u030E\u0311\u031A\u035D\u031E\u0321\u0355\u0325\u0332\u0355O\u0334\u0352\u0357\u0306\u0358\u033D\u0360\u0328\u035A\u0324\u0317R\u0335\u035B\u0305\u0351\u0351\u033E\u030D\u0355\u0326\u0348\u0354\u0349
+        \u0335\u030C\u034A\u035D\u030A\u0319T\u0337\u0352\u030B\u0344\u030E\u0306\u0357\u031D\u032D\u0354I\u0336\u030E\u0343\u0344\u0306\u033F\u0342\u0317\u035A\u031D\u0355\u032B\u033C"
+  - severity: 2
+    sprite: {fileID: 21300000, guid: 894865537cc118743a5d2fa222836b70, type: 3}
+    credentialSpriteOverride: {fileID: 21300000, guid: 5797a2a16549e1245a834f52d686a9b2, type: 3}
+    requestSpriteOverride: {fileID: 21300000, guid: a0f04d5d5c6b8714dae529416d22b9cd, type: 3}
+    discrepancies: []
+    alteredAnswers:
+    - questionIndex: 0
+      wrongAnswer: No hay nada de malo conmigo.

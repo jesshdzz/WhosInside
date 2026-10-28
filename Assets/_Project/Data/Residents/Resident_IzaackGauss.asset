@@ -34,23 +34,51 @@ MonoBehaviour:
   behavior: 'Es demasiado presumido.
 
     Tiene mucho dinero.'
-  controlQuestions: []
+  controlQuestions:
+  - question: ID
+    correctAnswer: Todo esta bien con mi ID
+  - question: Apariencia
+    correctAnswer: Hoy me veo mas guapo de lo normal
+  - question: Solicitud de entrada
+    correctAnswer: Pues yo veo mi solicitud en perfectas condiciones
+  - question: 
+    correctAnswer: 
   doubles:
   - severity: 0
     sprite: {fileID: 21300000, guid: cc50ff491e830824cb5b8bda4a9bd70d, type: 3}
     credentialSpriteOverride: {fileID: 21300000, guid: c9b2bc8bceaec4a4f9aa9d62c9d3834e, type: 3}
     requestSpriteOverride: {fileID: 21300000, guid: 8d3f50d5abe03ac428071fab1c779d80, type: 3}
     discrepancies: []
-    alteredAnswers: []
+    alteredAnswers:
+    - questionIndex: 0
+      wrongAnswer: Es que se me olvido cuando vence.
+    - questionIndex: 1
+      wrongAnswer: "\xBFQu\xE9? Si yo soy el m\xE1s guapo del edificio, de que hablas."
+    - questionIndex: 2
+      wrongAnswer: Pues yo no le veo nada de malo a mis razones.
   - severity: 1
     sprite: {fileID: 21300000, guid: d5dfdadd079d23a4aa923b59c62d005f, type: 3}
     credentialSpriteOverride: {fileID: 21300000, guid: 8bb8aecf5287f544aa0a33295a26220b, type: 3}
     requestSpriteOverride: {fileID: 21300000, guid: 8d3f50d5abe03ac428071fab1c779d80, type: 3}
     discrepancies: []
-    alteredAnswers: []
+    alteredAnswers:
+    - questionIndex: 2
+      wrongAnswer: Pues yo no le veo nada de malo a mis razones.
+    - questionIndex: 1
+      wrongAnswer: "Me vas a discriminar por tener una nariz m\xE1s que tu? "
   - severity: 2
     sprite: {fileID: 21300000, guid: fba4133817bfc5043ab877540403248c, type: 3}
     credentialSpriteOverride: {fileID: 21300000, guid: 8bb8aecf5287f544aa0a33295a26220b, type: 3}
     requestSpriteOverride: {fileID: 21300000, guid: 9c8d81443e5853444954f01588c6fde0, type: 3}
     discrepancies: []
-    alteredAnswers: []
+    alteredAnswers:
+    - questionIndex: 1
+      wrongAnswer: "Es que hace mucho calor afuera, que quer\xEDas que hiciera?"
+  - severity: 2
+    sprite: {fileID: 21300000, guid: 9973f8a8de4c18242abfd92dacd18469, type: 3}
+    credentialSpriteOverride: {fileID: 21300000, guid: c9b2bc8bceaec4a4f9aa9d62c9d3834e, type: 3}
+    requestSpriteOverride: {fileID: 21300000, guid: 9c8d81443e5853444954f01588c6fde0, type: 3}
+    discrepancies: []
+    alteredAnswers:
+    - questionIndex: 1
+      wrongAnswer: Pues todo esta bien, tu eres el que necesita lentes.
