@@ -37,7 +37,16 @@ MonoBehaviour:
 
     Tiene
     gustos finos'
-  controlQuestions: []
+  controlQuestions:
+  - question: ID
+    correctAnswer: "\xBFMi ID? Esta justo aqu\xED, \xBFno lo ves?"
+  - question: Apariencia
+    correctAnswer: "Todo esta bien conmigo, al menos hasta esta ma\xF1ana"
+  - question: Solicitud de Entrada
+    correctAnswer: "No hay nada de malo con mi solicitud, \xBFEst\xE1s revisando
+      bien?"
+  - question: "Lista del D\xEDa"
+    correctAnswer: Claro que estoy en la lista, revisa bien
   doubles:
   - severity: 0
     sprite: {fileID: 21300000, guid: 085047b378621c44dbb0008ffe89d10d, type: 3}
@@ -46,16 +55,36 @@ MonoBehaviour:
     discrepancies:
     - category: 1
       description: Cuello largo
-    alteredAnswers: []
+    alteredAnswers:
+    - questionIndex: 0
+      wrongAnswer: "Es nuevo; lo perd\xED y tuve que conseguir otro."
+    - questionIndex: 0
+      wrongAnswer: "Qu\xE9 son varios numeritos m\xE1s..."
+    - questionIndex: 1
+      wrongAnswer: Pues yo veo todo normal, no se de lo que hablas
   - severity: 1
     sprite: {fileID: 21300000, guid: b6c36e05e02394441ba071ae8dbf6205, type: 3}
     credentialSpriteOverride: {fileID: 21300000, guid: 95eaad5715e0dc44eb6ef27cc720db13, type: 3}
     requestSpriteOverride: {fileID: 21300000, guid: a86e66ba7b8328441b043e4000a0b417, type: 3}
     discrepancies: []
-    alteredAnswers: []
+    alteredAnswers:
+    - questionIndex: 1
+      wrongAnswer: "Me hice un peque\xF1o cambio de look, \xBFQu\xE9 tal me veo?"
   - severity: 2
     sprite: {fileID: 21300000, guid: 2b2f2203fcba9e34284ea0c7f4455bc9, type: 3}
     credentialSpriteOverride: {fileID: 21300000, guid: 95eaad5715e0dc44eb6ef27cc720db13, type: 3}
     requestSpriteOverride: {fileID: 21300000, guid: dc4e0601cc85d1a48b769bb51931ad10, type: 3}
     discrepancies: []
-    alteredAnswers: []
+    alteredAnswers:
+    - questionIndex: 2
+      wrongAnswer: "\xBFQu\xE9 hay de malo vivir en dos apartamentos?"
+    - questionIndex: 1
+      wrongAnswer: "Oh vamos, solo sali a estirar un poco los m\xFAsculos del cuello."
+  - severity: 2
+    sprite: {fileID: 21300000, guid: 0452af04fea5d54479b760128c395908, type: 3}
+    credentialSpriteOverride: {fileID: 21300000, guid: 95eaad5715e0dc44eb6ef27cc720db13, type: 3}
+    requestSpriteOverride: {fileID: 21300000, guid: dc4e0601cc85d1a48b769bb51931ad10, type: 3}
+    discrepancies: []
+    alteredAnswers:
+    - questionIndex: 2
+      wrongAnswer: "\xBFQu\xE9 hay de malo vivir en dos apartamentos?"

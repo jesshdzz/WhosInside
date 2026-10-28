@@ -38,23 +38,49 @@ MonoBehaviour:
 
     Tiene un tono
     de voz bajo'
-  controlQuestions: []
+  controlQuestions:
+  - question: ID
+    correctAnswer: Todo esta bein con mi ID.
+  - question: Apariencia
+    correctAnswer: Luzco mas guapa de lo normal.
+  - question: Solicitud de Entrada
+    correctAnswer: Yo veo todo normal.
+  - question: Lista del dia
+    correctAnswer: Pues yo si estoy en esa lista.
   doubles:
   - severity: 0
     sprite: {fileID: 21300000, guid: 590ca57cc17b2564fae37098bc9352e8, type: 3}
     credentialSpriteOverride: {fileID: 21300000, guid: e581d0746467bb94ba90f465892569e4, type: 3}
-    requestSpriteOverride: {fileID: 21300000, guid: 7e3a2bff1e1185144a90e7c9a16db752, type: 3}
-    discrepancies: []
-    alteredAnswers: []
-  - severity: 1
-    sprite: {fileID: 21300000, guid: 9075e69f0ac56bb4a8c282807828dddd, type: 3}
-    credentialSpriteOverride: {fileID: 21300000, guid: e581d0746467bb94ba90f465892569e4, type: 3}
     requestSpriteOverride: {fileID: 21300000, guid: 67530650fef17c64db2e243f97a4283d, type: 3}
     discrepancies: []
-    alteredAnswers: []
-  - severity: 2
-    sprite: {fileID: 21300000, guid: 45e81efe2ade23042bfc1bb1a5409a42, type: 3}
+    alteredAnswers:
+    - questionIndex: 2
+      wrongAnswer: "Es un nuevo dise\xF1o de cejas que me hice. "
+    - questionIndex: 1
+      wrongAnswer: Yo no veo nada de malo en mi ID
+  - severity: 1
+    sprite: {fileID: 21300000, guid: 9075e69f0ac56bb4a8c282807828dddd, type: 3}
     credentialSpriteOverride: {fileID: 21300000, guid: d031f2550ee6b6c48b7b7c6f3163c19b, type: 3}
     requestSpriteOverride: {fileID: 21300000, guid: 67530650fef17c64db2e243f97a4283d, type: 3}
     discrepancies: []
-    alteredAnswers: []
+    alteredAnswers:
+    - questionIndex: 1
+      wrongAnswer: "\xBFMis ojos? \xBFQu\xE9 hay de malo con ellos."
+  - severity: 2
+    sprite: {fileID: 21300000, guid: 45e81efe2ade23042bfc1bb1a5409a42, type: 3}
+    credentialSpriteOverride: {fileID: 21300000, guid: d031f2550ee6b6c48b7b7c6f3163c19b, type: 3}
+    requestSpriteOverride: {fileID: 21300000, guid: 7e3a2bff1e1185144a90e7c9a16db752, type: 3}
+    discrepancies: []
+    alteredAnswers:
+    - questionIndex: 2
+      wrongAnswer: Bueno, espero que obedezcas tal como esta escrito.
+    - questionIndex: 1
+      wrongAnswer: "Son mis nuevos pares de ojos, nada fuera de lo com\xFAn."
+  - severity: 2
+    sprite: {fileID: 21300000, guid: f46f7f10192affc4c9ec09a2a7408b06, type: 3}
+    credentialSpriteOverride: {fileID: 21300000, guid: d031f2550ee6b6c48b7b7c6f3163c19b, type: 3}
+    requestSpriteOverride: {fileID: 21300000, guid: 7e3a2bff1e1185144a90e7c9a16db752, type: 3}
+    discrepancies: []
+    alteredAnswers:
+    - questionIndex: 2
+      wrongAnswer: Bueno, espero que obedezcas tal como esta escrito.

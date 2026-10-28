@@ -34,23 +34,51 @@ MonoBehaviour:
   behavior: 'Es un gran piloto
 
     Tiene muy buen olfato y vista'
-  controlQuestions: []
+  controlQuestions:
+  - question: ID
+    correctAnswer: Todo esta bien con mi ID
+  - question: Apariencia
+    correctAnswer: Todp esta bien conmigo hermano.
+  - question: Solicitud de Entrada
+    correctAnswer: Yo lo veo muy normal y en orden
+  - question: Lista del dia
+    correctAnswer: Yo si estoy en la lista del dia
   doubles:
   - severity: 0
     sprite: {fileID: 21300000, guid: 78723fa96082e784bb11ad59ea5e8e0d, type: 3}
+    credentialSpriteOverride: {fileID: 21300000, guid: b7e7e6ca056db564c82b530e092bdef9, type: 3}
+    requestSpriteOverride: {fileID: 21300000, guid: c3cdc6fe47a551e45b1fe7358a96b6bc, type: 3}
+    discrepancies: []
+    alteredAnswers:
+    - questionIndex: 1
+      wrongAnswer: Solo estoy algo enojado, es todo.
+    - questionIndex: 0
+      wrongAnswer: Error de dedo en la fecha, errorcito.
+  - severity: 1
+    sprite: {fileID: 21300000, guid: 29d57c647b9b0fd44861216a8ec5917f, type: 3}
     credentialSpriteOverride: {fileID: 21300000, guid: 82b75b3f93824c147b4203a912e3c21a, type: 3}
     requestSpriteOverride: {fileID: 21300000, guid: a79dce64f365cc9428cdf336ef6450f1, type: 3}
     discrepancies: []
-    alteredAnswers: []
-  - severity: 1
-    sprite: {fileID: 21300000, guid: 29d57c647b9b0fd44861216a8ec5917f, type: 3}
-    credentialSpriteOverride: {fileID: 21300000, guid: b7e7e6ca056db564c82b530e092bdef9, type: 3}
-    requestSpriteOverride: {fileID: 21300000, guid: a79dce64f365cc9428cdf336ef6450f1, type: 3}
-    discrepancies: []
-    alteredAnswers: []
+    alteredAnswers:
+    - questionIndex: 2
+      wrongAnswer: "Tengo una excelente ortograf\xEDa."
+    - questionIndex: 1
+      wrongAnswer: "\xBFTe refieres a mi carita? Oh, es solo para ocultar mis sentimientos."
   - severity: 2
     sprite: {fileID: 21300000, guid: 1dd06eb82cd347542bcbe7540922fa47, type: 3}
     credentialSpriteOverride: {fileID: 21300000, guid: 82b75b3f93824c147b4203a912e3c21a, type: 3}
     requestSpriteOverride: {fileID: 21300000, guid: c3cdc6fe47a551e45b1fe7358a96b6bc, type: 3}
     discrepancies: []
-    alteredAnswers: []
+    alteredAnswers:
+    - questionIndex: 1
+      wrongAnswer: "\U0001D57E\U0001D586\U0001D593\U0001D58C\U0001D59A\U0001D58E\U0001D598
+        \u0335\U0001D58A\u0336\U0001D58E\u0338\U0001D59A\u0336\U0001D598\u0335 \u0338\U0001D598\u0336\U0001D59A\u0337\U0001D595\u0335\U0001D58A\u0334\U0001D597\u0338
+        \u0338\U0001D593\u0337\U0001D594\u0336\U0001D598\u0335 \u2E38"
+  - severity: 2
+    sprite: {fileID: 21300000, guid: 1dd06eb82cd347542bcbe7540922fa47, type: 3}
+    credentialSpriteOverride: {fileID: 21300000, guid: 82b75b3f93824c147b4203a912e3c21a, type: 3}
+    requestSpriteOverride: {fileID: 21300000, guid: a79dce64f365cc9428cdf336ef6450f1, type: 3}
+    discrepancies: []
+    alteredAnswers:
+    - questionIndex: 2
+      wrongAnswer: Yo lo veo muy normal, no se de que hablas.
