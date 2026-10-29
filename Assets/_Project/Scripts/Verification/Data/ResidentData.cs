@@ -94,10 +94,10 @@ namespace WhoIsOutside.Data
 
       if (doubles == null) return;
 
-      if (doubles.Count != ExpectedDoubleCount)
+      if (doubles.Count < ExpectedDoubleCount)
       {
         Debug.LogWarning(
-            $"[{name}] Se esperaban {ExpectedDoubleCount} dobles y hay {doubles.Count}.",
+            $"[{name}] Se esperaban al menos {ExpectedDoubleCount} dobles y hay {doubles.Count}.",
             this);
       }
 
@@ -117,8 +117,8 @@ namespace WhoIsOutside.Data
         if (variant.sprite == null)
           Debug.LogWarning($"[{name}] El doble #{i} no tiene sprite.", this);
 
-        if (variant.discrepancies == null || variant.discrepancies.Count == 0)
-          Debug.LogWarning($"[{name}] El doble #{i} no tiene discrepancias.", this);
+        //if (variant.discrepancies == null || variant.discrepancies.Count == 0)
+          //Debug.LogWarning($"[{name}] El doble #{i} no tiene discrepancias.", this);
 
         if (variant.alteredAnswers == null) continue;
 

@@ -149,10 +149,10 @@ namespace WhoIsOutside.Verification
       foreach (ResidentVariant variant in resident.Doubles)
       {
         bool hasSprite = variant != null && variant.sprite != null;
-        bool hasDiscrepancy =
-            variant != null && variant.discrepancies != null && variant.discrepancies.Count > 0;
+        //bool hasDiscrepancy =
+            //variant != null && variant.discrepancies != null && variant.discrepancies.Count > 0;
 
-        if (hasSprite && hasDiscrepancy)
+        if (hasSprite)
           valid.Add(variant);
       }
 

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Night_01
   m_EditorClassIdentifier: Assembly-CSharp::WhoIsOutside.Data.NightConfig
   expectedResidents:
-  - {fileID: 11400000, guid: 31f6d34a0d8d953449add618716cb580, type: 2}
+  - {fileID: 11400000, guid: 1cdcc9dc95cf0994f96ce8a60b771994, type: 2}
   - {fileID: 11400000, guid: 537657f43c6a8634a8cc9336097f20da, type: 2}
   - {fileID: 11400000, guid: 8698e8427bdea614e93e59d9bb34d59c, type: 2}
   arrivalsCount: 6
