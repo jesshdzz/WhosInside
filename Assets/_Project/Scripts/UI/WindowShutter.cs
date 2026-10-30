@@ -38,6 +38,12 @@ namespace WhoIsOutside.UI
 
     [SerializeField] private bool logFlow = true;
 
+        /// <summary>Se dispara cuando la persiana empieza a caer.</summary>
+    public event System.Action Closing;
+
+    /// <summary>Se dispara cuando la persiana empieza a subir.</summary>
+    public event System.Action Opening;
+
     private Vector2 closedPosition; // Donde la persiana tapa la ventana (la posicion del editor)
     private Vector2 openPosition;   // Arriba, fuera del recorte
     private bool isBusy;            // True durante todo el ciclo: cae, espera y sube
@@ -116,6 +122,7 @@ namespace WhoIsOutside.UI
     {
       // 1) Cae acelerando, como una persiana que se suelta.
       Log("Cerrando ventanilla.");
+      Closing?.Invoke();
       Vector2 from = shutter.anchoredPosition;
       float t = 0f;
 
@@ -149,6 +156,7 @@ namespace WhoIsOutside.UI
 
       // 5) Sube suavemente.
       Log("Abriendo ventanilla.");
+      Opening?.Invoke();
       from = shutter.anchoredPosition;
       t = 0f;
 
