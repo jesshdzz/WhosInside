@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using WhoIsOutside.Core;
@@ -6,19 +7,13 @@ using WhoIsOutside.Verification;
 namespace WhoIsOutside.UI
 {
   /// <summary>
-  /// PROVISIONAL (Tarea 8b): une los botones de decision con el GameManager y el
-  /// TurnController para poder jugar una noche completa. Las reglas de resultado
-  /// de aqui se reemplazan en la Tarea 10 y las pantallas finales en la Tarea 11.
+  /// Une los botones de decision con el GameManager y el TurnController.
+  /// Tarea 10: las reglas de resultado viven en ResolutionRules; este script solo
+  /// las consulta y avisa con eventos (TurnResolved, NightEnded) para que la
+  /// Tarea 11 muestre las pantallas finales.
   /// </summary>
   public class DecisionFlow : MonoBehaviour
   {
-    private enum Defeat
-    {
-      None,
-      Screamer,   // Dejo pasar a un impostor
-      Fired       // Reporto a un residente real
-    }
-
     [Header("Referencias")]
     [SerializeField] private GameManager gameManager;
     [SerializeField] private TurnController turnController;
@@ -31,8 +26,14 @@ namespace WhoIsOutside.UI
     [SerializeField, Min(0f)] private float resultDelay = 1.5f;
     [SerializeField] private bool logFlow = true;
 
-    private Defeat pendingDefeat = Defeat.None;
-    private Defeat nightDefeat = Defeat.None;
+    /// <summary>Se dispara cuando una decision final resuelve el turno actual.</summary>
+    public event Action<TurnResult> TurnResolved;
+
+    /// <summary>Se dispara una vez cuando la noche termina (victoria o derrota).</summary>
+    public event Action<NightEnding> NightEnded;
+
+    private TurnResult pendingResult = TurnResult.Correct; // Resultado del turno en curso
+    private TurnResult nightResult = TurnResult.Correct;   // Derrota que termino la noche (si hubo)
     private Coroutine resultRoutine;
 
     private void OnEnable()
@@ -70,23 +71,22 @@ namespace WhoIsOutside.UI
       Arrival arrival = turnController.CurrentArrival;
       if (arrival == null) return; // Nadie en la ventanilla
 
-      switch (decision)
+      // Deny solo cierra la ventanilla: el resultado se decide con Emergencia.
+      if (decision == Decision.Deny)
       {
-        case Decision.Deny:
-          // Ventanilla cerrada: el resultado se decide con el boton de Emergencia.
-          Log("Rechazado: ventanilla cerrada, falta el reporte.");
-          gameManager.RejectResident();
-          return;
-
-        case Decision.Allow:
-          pendingDefeat = arrival.IsImpostor ? Defeat.Screamer : Defeat.None;
-          break;
-
-        case Decision.Emergency:
-          pendingDefeat = arrival.IsImpostor ? Defeat.None : Defeat.Fired;
-          break;
+        Log("Rechazado: ventanilla cerrada, falta el reporte.");
+        gameManager.RejectResident();
+        return;
       }
 
+      // Allow y Emergency resuelven el turno: las reglas viven en ResolutionRules.
+      if (!ResolutionRules.TryResolve(decision, arrival.IsImpostor, out TurnResult result))
+      {
+        return; // Decision que no resuelve nada
+      }
+
+      pendingResult = result;
+      TurnResolved?.Invoke(result);
       gameManager.SubmitDecision();
     }
 
@@ -106,22 +106,26 @@ namespace WhoIsOutside.UI
 
         case GameState.ShowingResult:
           decisionInput.DisableAll();
-          Log(pendingDefeat == Defeat.None
+          Log(pendingResult == TurnResult.Correct
               ? "Resultado: correcto."
-              : $"Resultado: DERROTA ({pendingDefeat}).");
+              : $"Resultado: DERROTA ({pendingResult}).");
           resultRoutine = StartCoroutine(FinishTurn());
           break;
 
         case GameState.NightOver:
+        {
           decisionInput.DisableAll();
-          Log(nightDefeat == Defeat.None
+          NightEnding ending = ResolutionRules.ToEnding(nightResult);
+          Log(ending == NightEnding.Victory
               ? "Noche terminada: VICTORIA."
-              : $"Noche terminada: DERROTA ({nightDefeat}).");
+              : $"Noche terminada: DERROTA ({ending}).");
+          NightEnded?.Invoke(ending);
           break;
+        }
 
         case GameState.NotStarted:
-          pendingDefeat = Defeat.None;
-          nightDefeat = Defeat.None;
+          pendingResult = TurnResult.Correct;
+          nightResult = TurnResult.Correct;
           decisionInput.DisableAll();
           break;
 
@@ -140,9 +144,9 @@ namespace WhoIsOutside.UI
 
       resultRoutine = null;
 
-      if (pendingDefeat != Defeat.None)
+      if (ResolutionRules.IsDefeat(pendingResult))
       {
-        nightDefeat = pendingDefeat;
+        nightResult = pendingResult;
         gameManager.EndNight();
       }
       else
@@ -154,6 +158,45 @@ namespace WhoIsOutside.UI
     private void Log(string message)
     {
       if (logFlow) Debug.Log($"[DecisionFlow] {message}", this);
+    }
+
+    // Prueba rapida de la tabla de reglas, sin necesidad de dar Play.
+    // Se ejecuta desde el menu de tres puntos del componente en el Inspector.
+    [ContextMenu("Probar reglas de resolucion")]
+    private void TestRules()
+    {
+      int fails = 0;
+      fails += CheckRule(Decision.Allow,     false, TurnResult.Correct);
+      fails += CheckRule(Decision.Allow,     true,  TurnResult.DefeatScreamer);
+      fails += CheckRule(Decision.Emergency, true,  TurnResult.Correct);
+      fails += CheckRule(Decision.Emergency, false, TurnResult.DefeatFired);
+
+      if (ResolutionRules.TryResolve(Decision.Deny, true, out _))
+      {
+        Debug.LogError("[DecisionFlow] FALLA: Deny no deberia resolver el turno.", this);
+        fails++;
+      }
+      else
+      {
+        Debug.Log("[DecisionFlow] PASA: Deny no resuelve el turno.", this);
+      }
+
+      Debug.Log($"[DecisionFlow] Prueba de reglas terminada. Fallos: {fails}", this);
+    }
+
+    private int CheckRule(Decision decision, bool isImpostor, TurnResult expected)
+    {
+      ResolutionRules.TryResolve(decision, isImpostor, out TurnResult actual);
+      string who = isImpostor ? "impostor" : "real";
+
+      if (actual == expected)
+      {
+        Debug.Log($"[DecisionFlow] PASA: {decision} / {who} -> {actual}", this);
+        return 0;
+      }
+
+      Debug.LogError($"[DecisionFlow] FALLA: {decision} / {who} dio {actual} y se esperaba {expected}", this);
+      return 1;
     }
   }
 }

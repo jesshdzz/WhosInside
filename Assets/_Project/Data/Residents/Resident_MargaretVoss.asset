@@ -52,7 +52,6 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 590ca57cc17b2564fae37098bc9352e8, type: 3}
     credentialSpriteOverride: {fileID: 21300000, guid: e581d0746467bb94ba90f465892569e4, type: 3}
     requestSpriteOverride: {fileID: 21300000, guid: 67530650fef17c64db2e243f97a4283d, type: 3}
-    discrepancies: []
     alteredAnswers:
     - questionIndex: 2
       wrongAnswer: "Es un nuevo dise\xF1o de cejas que me hice. "
@@ -62,7 +61,6 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 9075e69f0ac56bb4a8c282807828dddd, type: 3}
     credentialSpriteOverride: {fileID: 21300000, guid: d031f2550ee6b6c48b7b7c6f3163c19b, type: 3}
     requestSpriteOverride: {fileID: 21300000, guid: 67530650fef17c64db2e243f97a4283d, type: 3}
-    discrepancies: []
     alteredAnswers:
     - questionIndex: 1
       wrongAnswer: "\xBFMis ojos? \xBFQu\xE9 hay de malo con ellos."
@@ -70,7 +68,6 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 45e81efe2ade23042bfc1bb1a5409a42, type: 3}
     credentialSpriteOverride: {fileID: 21300000, guid: d031f2550ee6b6c48b7b7c6f3163c19b, type: 3}
     requestSpriteOverride: {fileID: 21300000, guid: 7e3a2bff1e1185144a90e7c9a16db752, type: 3}
-    discrepancies: []
     alteredAnswers:
     - questionIndex: 2
       wrongAnswer: Bueno, espero que obedezcas tal como esta escrito.
@@ -80,7 +77,6 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: f46f7f10192affc4c9ec09a2a7408b06, type: 3}
     credentialSpriteOverride: {fileID: 21300000, guid: d031f2550ee6b6c48b7b7c6f3163c19b, type: 3}
     requestSpriteOverride: {fileID: 21300000, guid: 7e3a2bff1e1185144a90e7c9a16db752, type: 3}
-    discrepancies: []
     alteredAnswers:
     - questionIndex: 2
       wrongAnswer: Bueno, espero que obedezcas tal como esta escrito.
