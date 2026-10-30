@@ -43,6 +43,9 @@ namespace WhoIsOutside.UI
 
     private Coroutine hideRoutine;
 
+    /// <summary>Se dispara cada vez que el residente responde y aparece su dialogo.</summary>
+    public event System.Action ResponseShown;
+
     /// <summary>True si TODAS las filas tienen palomita.</summary>
     public bool AllRowsChecked
     {
@@ -195,6 +198,7 @@ namespace WhoIsOutside.UI
     {
       if (responseText != null) responseText.text = text;
       if (responsePanel != null) responsePanel.SetActive(true);
+      ResponseShown?.Invoke();
 
       // Reinicia el temporizador: el dialogo se oculta solo tras responseSeconds.
       if (hideRoutine != null) StopCoroutine(hideRoutine);

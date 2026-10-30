@@ -31,6 +31,18 @@ namespace WhoIsOutside.Core
 
     private Coroutine arrivalRoutine;
 
+    // Mientras sea true, la siguiente llegada espera (por ejemplo, a que la persiana termine de subir).
+    private bool arrivalHeld;
+
+    /// <summary>
+    /// La UI pide que la siguiente llegada espere (true) o siga su curso (false).
+    /// Si se queda en true por error, la noche se queda esperando: por eso se libera al reiniciar.
+    /// </summary>
+    public void SetArrivalHold(bool hold)
+    {
+      arrivalHeld = hold;
+    }
+
     private void OnEnable()
     {
       if (gameManager == null || arrivalGenerator == null)
@@ -106,6 +118,7 @@ namespace WhoIsOutside.Core
 
         case GameState.NotStarted:
           ClearArrival();
+          arrivalHeld = false; // Noche nueva: nada debe estar reteniendo llegadas
           break;
       }
     }
@@ -115,6 +128,10 @@ namespace WhoIsOutside.Core
     {
       if (arrivalDelay > 0f)
         yield return new WaitForSeconds(arrivalDelay);
+
+        // Si la UI pidio esperar (persiana bajada), no llega nadie hasta que se libere.
+      while (arrivalHeld)
+        yield return null;
 
       Arrival arrival;
       if (!arrivalGenerator.TryGetNext(out arrival))
