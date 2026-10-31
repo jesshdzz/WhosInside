@@ -49,23 +49,17 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: b9aae0637d1506d4dad4747b219b5a29, type: 3}
     credentialSpriteOverride: {fileID: 21300000, guid: 9260804daba9de9469b860418cc8736e, type: 3}
     requestSpriteOverride: {fileID: 21300000, guid: f7ba0e1e53f8e814989a031ef050572a, type: 3}
-    discrepancies:
-    - category: 1
-      description: No se
     alteredAnswers:
     - questionIndex: 0
-      wrongAnswer: No hay nada de malo con mi ID, que te pasa.
-    - questionIndex: 0
       wrongAnswer: "Vamos, solo me falto un n\xFAmero."
+    - questionIndex: 0
+      wrongAnswer: 
     - questionIndex: 1
       wrongAnswer: "Es un nuevo dise\xF1o de cejas, lo normal."
   - severity: 1
     sprite: {fileID: 21300000, guid: 0cb2aea2c98f28b4982490b85e69edd7, type: 3}
     credentialSpriteOverride: {fileID: 21300000, guid: f1ebc86606a40d14291aedb4a33f7e36, type: 3}
     requestSpriteOverride: {fileID: 21300000, guid: 0a543e4e11ed05747a1397f67786b7ba, type: 3}
-    discrepancies:
-    - category: 0
-      description: 
     alteredAnswers:
     - questionIndex: 2
       wrongAnswer: "\xBFQu\xE9 hay de malo vivir en dos apartamentos?"
@@ -77,7 +71,6 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 2b4adf3ccc40d2f479b56c611b2e712a, type: 3}
     credentialSpriteOverride: {fileID: 21300000, guid: f1ebc86606a40d14291aedb4a33f7e36, type: 3}
     requestSpriteOverride: {fileID: 21300000, guid: f7ba0e1e53f8e814989a031ef050572a, type: 3}
-    discrepancies: []
     alteredAnswers:
     - questionIndex: 1
       wrongAnswer: "Oh vamos, solo me rio de un peque\xF1o chiste, \xBFTe lo ense\xF1o?"
@@ -85,7 +78,6 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 2d0d0240e6532084091782b70bbf8937, type: 3}
     credentialSpriteOverride: {fileID: 21300000, guid: 9260804daba9de9469b860418cc8736e, type: 3}
     requestSpriteOverride: {fileID: 21300000, guid: f7ba0e1e53f8e814989a031ef050572a, type: 3}
-    discrepancies: []
     alteredAnswers:
     - questionIndex: 0
       wrongAnswer: No veo por que me preguntas por mi ID, no hya nada malo.

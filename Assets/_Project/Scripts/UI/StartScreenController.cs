@@ -21,6 +21,9 @@ namespace WhoIsOutside.UI
 
     [SerializeField] private bool logFlow = true;
 
+    /// <summary>Se dispara cuando el jugador pulsa el boton Iniciar.</summary>
+    public event System.Action GameStarted;
+
     // Evita que el valor se quede guardado entre sesiones de Play cuando el editor
     // no recarga el dominio (Enter Play Mode Options).
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
@@ -59,6 +62,7 @@ namespace WhoIsOutside.UI
     {
       if (startScreen != null) startScreen.SetActive(false);
       Log("Boton Iniciar: empieza la noche.");
+      GameStarted?.Invoke();
       turnController.BeginNight();
     }
 

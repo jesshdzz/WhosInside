@@ -2366,7 +2366,7 @@ MonoBehaviour:
   container: {fileID: 1635319917}
   shutter: {fileID: 1214037891}
   closeDuration: 0.18
-  holdSeconds: 3
+  holdSeconds: 3.6
   openDuration: 0.6
   bounceHeight: 18
   bounceDuration: 0.25
@@ -4693,8 +4693,15 @@ MonoBehaviour:
   decisionFlow: {fileID: 1936050158}
   windowShutter: {fileID: 581221893}
   checklistController: {fileID: 372267570}
+  startScreenController: {fileID: 748377160}
   backgroundMusic: {fileID: 8300000, guid: 925366faa824d2d479f1d56298c47e7f, type: 3}
   musicVolume: 0.4
+  startClip: {fileID: 8300000, guid: 7963cf9ddd21c1d41accda8a85ba8d51, type: 3}
+  allowClip: {fileID: 8300000, guid: 5b8fecf6f603e31499f21cd86a835e58, type: 3}
+  denyClip: {fileID: 8300000, guid: 5b8fecf6f603e31499f21cd86a835e58, type: 3}
+  emergencyClip: {fileID: 8300000, guid: cd9b263471c4dc64aa29834b8e55b17a, type: 3}
+  emergencyVolume: 1
+  emergencyFadeOut: 0.3
   winClip: {fileID: 8300000, guid: f3287ca3c62cf304abbace739f280f3d, type: 3}
   loseClip: {fileID: 8300000, guid: 19a725d31c7443540ae0db6d84344215, type: 3}
   resultVolume: 0.723
@@ -4705,6 +4712,7 @@ MonoBehaviour:
   shutterOpenClip: {fileID: 8300000, guid: 84f0975e45c505a4dac7d06187071886, type: 3}
   paperClips:
   - {fileID: 8300000, guid: 3d6126452d69c6547ae6402908d9536c, type: 3}
+  paperButtons: []
   dialogueClip: {fileID: 8300000, guid: eb5f2f0cf14abaf4e953a5ba79e6a012, type: 3}
   dialogueVolume: 1
   sfxVolume: 1
