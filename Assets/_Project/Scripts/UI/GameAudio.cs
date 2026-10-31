@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 using WhoIsOutside.Core;
 using WhoIsOutside.UI;
 using WhoIsOutside.Verification;
@@ -19,10 +21,26 @@ namespace WhoIsOutside.Audio
     [SerializeField] private DecisionFlow decisionFlow;
     [SerializeField] private WindowShutter windowShutter;
     [SerializeField] private ChecklistController checklistController;
+    [SerializeField] private StartScreenController startScreenController;
 
     [Header("Musica de fondo")]
     [SerializeField] private AudioClip backgroundMusic;
     [SerializeField, Range(0f, 1f)] private float musicVolume = 0.4f;
+
+    [Header("Pantalla de inicio")]
+    [Tooltip("Suena al pulsar el boton Iniciar.")]
+    [SerializeField] private AudioClip startClip;
+
+    [Header("Botones de decision")]
+    [SerializeField] private AudioClip allowClip;
+    [SerializeField] private AudioClip denyClip;
+
+    [Header("Emergencia")]
+    [Tooltip("Suena al pulsar Emergencia y dura lo que la ventanilla esta cerrada.")]
+    [SerializeField] private AudioClip emergencyClip;
+    [SerializeField, Range(0f, 1f)] private float emergencyVolume = 1f;
+    [Tooltip("Segundos que tarda en bajar el volumen cuando la persiana empieza a subir.")]
+    [SerializeField, Min(0f)] private float emergencyFadeOut = 0.3f;
 
     [Header("Final de la noche")]
     [SerializeField] private AudioClip winClip;
@@ -42,6 +60,10 @@ namespace WhoIsOutside.Audio
 
     [Header("Papeles (si pones varios, elige uno al azar)")]
     [SerializeField] private AudioClip[] paperClips;
+    [Tooltip("Opcional: botones a los que se les conecta el sonido de papel POR CODIGO. " +
+             "Sirve para los que no dejan anadir entradas en On Click (). " +
+             "No pongas aqui los que ya tienen PlayPaper en On Click, o sonara doble.")]
+    [SerializeField] private Button[] paperButtons;
 
     [Header("Dialogos del residente")]
     [SerializeField] private AudioClip dialogueClip;
@@ -56,7 +78,10 @@ namespace WhoIsOutside.Audio
     private AudioSource stepsSource;
     private AudioSource voiceSource;
     private AudioSource resultSource;
+    private AudioSource emergencySource;
     private AudioSource sfxSource;
+
+    private Coroutine emergencyFadeRoutine;
 
     private void Awake()
     {
@@ -64,6 +89,7 @@ namespace WhoIsOutside.Audio
       stepsSource = CreateSource("Steps", false);
       voiceSource = CreateSource("Voice", false);
       resultSource = CreateSource("Result", false);
+      emergencySource = CreateSource("Emergency", false);
       sfxSource = CreateSource("Sfx", false);
     }
 
@@ -93,7 +119,7 @@ namespace WhoIsOutside.Audio
       else Warn("TurnController (pasos de llegada)");
 
       if (decisionInput != null) decisionInput.DecisionMade += HandleDecision;
-      else Warn("DecisionInput (pasos de ida)");
+      else Warn("DecisionInput (botones Allow, Deny y Emergencia)");
 
       if (decisionFlow != null) decisionFlow.NightEnded += HandleNightEnded;
       else Warn("DecisionFlow (victoria y derrota)");
@@ -107,6 +133,18 @@ namespace WhoIsOutside.Audio
 
       if (checklistController != null) checklistController.ResponseShown += HandleResponseShown;
       else Warn("ChecklistController (dialogos)");
+
+      if (startScreenController != null) startScreenController.GameStarted += HandleGameStarted;
+      else Warn("StartScreenController (boton Iniciar)");
+
+      // Botones de papel conectados por codigo (opcional).
+      if (paperButtons != null)
+      {
+        foreach (Button button in paperButtons)
+        {
+          if (button != null) button.onClick.AddListener(PlayPaper);
+        }
+      }
     }
 
     private void OnDisable()
@@ -129,6 +167,15 @@ namespace WhoIsOutside.Audio
       }
 
       if (checklistController != null) checklistController.ResponseShown -= HandleResponseShown;
+      if (startScreenController != null) startScreenController.GameStarted -= HandleGameStarted;
+
+      if (paperButtons != null)
+      {
+        foreach (Button button in paperButtons)
+        {
+          if (button != null) button.onClick.RemoveListener(PlayPaper);
+        }
+      }
     }
 
     // ---------------- Eventos del juego ----------------
@@ -144,6 +191,7 @@ namespace WhoIsOutside.Audio
 
         case GameState.NightOver:
           StopMusic();
+          StopEmergencyNow();
           break;
 
         case GameState.NotStarted:
@@ -152,6 +200,7 @@ namespace WhoIsOutside.Audio
           resultSource.Stop();
           stepsSource.Stop();
           voiceSource.Stop();
+          StopEmergencyNow();
           break;
       }
 
@@ -159,9 +208,14 @@ namespace WhoIsOutside.Audio
       if (current != GameState.Deciding) voiceSource.Stop();
     }
 
+    private void HandleGameStarted()
+    {
+      PlaySfx(startClip);
+    }
+
     private void HandleArrivalStarted(Arrival arrival)
     {
-      PlayLoop(stepsSource, arrivalStepsClip, stepsVolume);
+      PlayOn(stepsSource, arrivalStepsClip, stepsVolume);
     }
 
     private void HandleArrivalEnded()
@@ -171,29 +225,58 @@ namespace WhoIsOutside.Audio
 
     private void HandleDecision(Decision decision)
     {
-      if (decision == Decision.Allow) PlayLoop(stepsSource, exitStepsClip, stepsVolume);
+      switch (decision)
+      {
+        case Decision.Allow:
+          PlaySfx(allowClip);
+          PlayOn(stepsSource, exitStepsClip, stepsVolume);
+          break;
+
+        case Decision.Deny:
+          PlaySfx(denyClip);
+          break;
+
+        case Decision.Emergency:
+          StopEmergencyFade();
+          PlayOn(emergencySource, emergencyClip, emergencyVolume);
+          Log("Suena emergencia.");
+          break;
+      }
     }
 
     private void HandleNightEnded(NightEnding ending)
     {
       AudioClip clip = ending == NightEnding.Victory ? winClip : loseClip;
-      PlayLoop(resultSource, clip, resultVolume);
+      PlayOn(resultSource, clip, resultVolume);
       Log(ending == NightEnding.Victory ? "Suena victoria." : "Suena derrota.");
     }
 
-    private void HandleShutterClosing() { PlaySfx(shutterCloseClip); }
+    private void HandleShutterClosing()
+    {
+      PlaySfx(shutterCloseClip);
+    }
 
-    private void HandleShutterOpening() { PlaySfx(shutterOpenClip); }
+    private void HandleShutterOpening()
+    {
+      PlaySfx(shutterOpenClip);
+
+      // La emergencia dura lo que la ventanilla esta cerrada: al subir, se apaga suavemente.
+      if (emergencySource.isPlaying)
+      {
+        StopEmergencyFade();
+        emergencyFadeRoutine = StartCoroutine(FadeOutEmergency());
+      }
+    }
 
     private void HandleResponseShown()
     {
-      PlayLoop(voiceSource, dialogueClip, dialogueVolume);
+      PlayOn(voiceSource, dialogueClip, dialogueVolume);
     }
 
     // ---------------- Para los botones (On Click) ----------------
 
     /// <summary>
-    /// Se conecta desde On Click () de los botones de papeles:
+    /// Sonido de papel. Se conecta desde On Click () o desde la lista Paper Buttons:
     /// ID, solicitud, lista del dia, checklist y carpetas de cada piso.
     /// </summary>
     public void PlayPaper()
@@ -222,7 +305,7 @@ namespace WhoIsOutside.Audio
     }
 
     // Reproduce un clip en una fuente propia (reemplaza lo que sonaba antes ahi).
-    private void PlayLoop(AudioSource source, AudioClip clip, float volume)
+    private void PlayOn(AudioSource source, AudioClip clip, float volume)
     {
       source.Stop();
       if (clip == null) return;
@@ -236,6 +319,37 @@ namespace WhoIsOutside.Audio
     private void PlaySfx(AudioClip clip)
     {
       if (clip != null) sfxSource.PlayOneShot(clip, sfxVolume);
+    }
+
+    // Baja el volumen de la emergencia y la detiene.
+    private IEnumerator FadeOutEmergency()
+    {
+      float startVolume = emergencySource.volume;
+      float t = 0f;
+
+      while (emergencyFadeOut > 0f && t < 1f)
+      {
+        t += Time.deltaTime / emergencyFadeOut;
+        emergencySource.volume = Mathf.Lerp(startVolume, 0f, Mathf.Clamp01(t));
+        yield return null;
+      }
+
+      emergencySource.Stop();
+      emergencyFadeRoutine = null;
+    }
+
+    private void StopEmergencyFade()
+    {
+      if (emergencyFadeRoutine == null) return;
+      StopCoroutine(emergencyFadeRoutine);
+      emergencyFadeRoutine = null;
+    }
+
+    // Corta la emergencia de golpe (fin de la noche o reinicio).
+    private void StopEmergencyNow()
+    {
+      StopEmergencyFade();
+      emergencySource.Stop();
     }
 
     private void Warn(string what)
